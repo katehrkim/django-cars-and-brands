@@ -1,0 +1,6 @@
+## brand_form.html
+<h2>{{ type_of_request }} Brand</h2>
+<form method="POST">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>

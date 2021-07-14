@@ -1,0 +1,11 @@
+## cars_list.html
+<h1> All Cars for {{ brand.brand_name }} </h1>
+<ul>
+  {% for car in cars %}
+    <div>
+      <li><a href="{% url 'car_detail' brand_id=brand.id car_id=car.id %}">{{ car.model }}</a></li>
+    </div>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'new_car' brand_id=brand.id %}">Add a new car</a>

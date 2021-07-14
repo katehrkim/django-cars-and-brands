@@ -1,0 +1,18 @@
+## brand_detail.html
+<div>
+  <h2>{{ brand.brand_name }}</h2>
+  <br>
+  <br>
+  <a href="{% url 'edit_brand' brand_id=brand.id %}"> Edit brand</a>
+  <br>
+  <br>
+  <form name="delete_brand" method="POST" action="{% url 'delete_brand' brand_id=brand.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Delete brand" />
+  </form>
+</div>
+
+<hr/>
+<div>
+  <a href="{% url 'car_list' brand_id=brand.id %}">Cars of this brand</a>
+</div>
